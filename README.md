@@ -1,7 +1,7 @@
 # Insertion Network
 
 **Insertion Network** is a method for building slice-level correspondence between two axial body CT image sequences.  
-Given a *query* CT volume and a *template* CT volume, the model establishes correspondence by **inserting slices from the query image into their correct locations within the template image sequence**.
+Given a *test* CT volume and a *template* CT volume, the model establishes correspondence by **inserting slices from the template image into their correct locations within the test image sequence**.
 
 ---
 
@@ -9,10 +9,10 @@ Given a *query* CT volume and a *template* CT volume, the model establishes corr
 
 - **Task**: Slice-level correspondence between two axial CT volumes  
 - **Input**:  
-  - Query CT image (NIfTI format)  
+  - Test CT image (NIfTI format)  
   - Template CT image (NIfTI format)  
-- **Output**: Predicted insertion locations of query slices within the template sequence  
-- **Core idea**: Correspondence is built by predicting where each query slice should be inserted into the ordered slice sequence of the template image.
+- **Output**: Predicted insertion locations of template slices within the test sequence  
+- **Core idea**: Correspondence is built by predicting where each template slice should be inserted into the ordered slice sequence of the test image.
 
 ---
 
@@ -36,9 +36,9 @@ python inference_args.py \
   --template_nii <query image path>
 ```
 
-The output is a visualization showing the predicted insertion positions of the query slices within the test sequence.
+The output is a visualization showing the predicted insertion positions of the template slices within the test sequence.
 
-### Example Output
+### Example Output (query image referes to the template image)
 
 <!-- Replace the image below with your actual output figure -->
 
