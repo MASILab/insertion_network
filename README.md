@@ -36,7 +36,7 @@ python inference_args.py \
   --template_nii <query image path>
 ```
 
-The output is a visualization showing the predicted insertion positions of the query slices within the template sequence.
+The output is a visualization showing the predicted insertion positions of the query slices within the test sequence.
 
 ### Example Output
 
