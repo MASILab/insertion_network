@@ -1,0 +1,36 @@
+\begin{table}[]
+
+\{{fontsize}}
+\centering
+
+{% if caption %}
+\captionsetup{ font={{fontsize}} }
+\caption { {{caption}} }
+{% else %}
+{% endif %}
+
+\begin{tabular} { {{column_format}} }
+\toprule
+
+{% for column_names in columns %}
+{{column_names}} \\
+
+{% if loop.index0 == columns|length - 1 %}
+\bottomrule
+{% else %}
+\midrule
+{% endif %}
+
+{% endfor %}
+
+
+{% for row in rows %}
+{{row}}
+{% endfor %}
+
+\bottomrule
+\end{tabular}
+
+
+\label{tab:addlabel}
+\end{table}
